@@ -2,12 +2,12 @@ name: Build otter grader notebooks
 
 on: workflow_dispatch
 
-jobs:
-  defaults:
-    run:
-      shell: bash
-      working-directory: src/01
+defaults:
+  run:
+    shell: bash
+    working-directory: src/01
 
+jobs:
   build:
     runs-on: ubuntu-20.04
  
