@@ -16,7 +16,10 @@ jobs:
 
       - name: Compile .ipynb
         run: |
+          pwd
           cd src/01
+          pwd
+          ls -al
           otter assign --v1 hw01.ipynb
 
       - name: Push to student notebook branch
