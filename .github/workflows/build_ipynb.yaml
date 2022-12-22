@@ -18,6 +18,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install git+https://github.com/ucbds-infra/otter-grader
+          pip install nbconvert
 
       - name: Compile .ipynb
         run: |
