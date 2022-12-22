@@ -9,10 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up Otter Grader
-        run: |
-          python -m pip install --upgrade pip
-          pip install git+https://github.com/ucbds-infra/otter-grader
+        #      - name: Set up Otter Grader
+        #run: |
+        #  python -m pip install --upgrade pip
+        #  pip install git+https://github.com/ucbds-infra/otter-grader
 
       - name: Compile .ipynb
         run: |
