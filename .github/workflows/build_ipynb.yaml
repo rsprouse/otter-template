@@ -3,10 +3,16 @@ name: Build otter grader notebooks
 on: workflow_dispatch
 
 jobs:
+  defaults:
+    run:
+      shell: bash
+      working-directory: src/01
+
   build:
     runs-on: ubuntu-20.04
  
     steps:
+      - uses: actions/checkout@v3
 
         #      - name: Set up Otter Grader
         #run: |
@@ -14,14 +20,9 @@ jobs:
         #  pip install git+https://github.com/ucbds-infra/otter-grader
 
       - name: Compile .ipynb
-        uses: actions/checkout@v3
         run: |
-          pwd
           echo `pwd`
-          echo `ls -alR`
-          cd src/01
-          pwd
-          ls -al
+          echo `ls -ald`
           otter assign --v1 hw01.ipynb
 
       - name: Push to student notebook branch
