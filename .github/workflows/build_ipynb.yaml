@@ -17,6 +17,7 @@ jobs:
       - name: Compile .ipynb
         run: |
           pwd
+          echo `pwd`
           cd src/01
           pwd
           ls -al
