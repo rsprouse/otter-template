@@ -23,7 +23,7 @@ jobs:
         run: |
           echo `pwd`
           echo `ls -ald`
-          otter assign hw01.ipynb
+          otter assign hw01.ipynb dist
 
       - name: Push to student notebook branch
         uses: peaceiris/actions-gh-pages@v3
