@@ -48,4 +48,4 @@ jobs:
           destination-repository-name: 'otter-template-student'
           user-email: ronald@berkeley.edu
           target-branch: main
-          target-directory: .
+          target-directory: notebooks
