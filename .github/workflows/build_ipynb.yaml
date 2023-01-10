@@ -5,7 +5,7 @@ on: workflow_dispatch
 defaults:
   run:
     shell: bash
-    working-directory: src/01
+    working-directory: src/02
 
 jobs:
   build:
@@ -29,21 +29,21 @@ jobs:
         run: |
           echo `pwd`
           echo `ls -ald`
-          otter assign hw01.ipynb dist
+          otter assign hw02.ipynb dist
 
       - name: Push to student notebook branch (for autograder files)
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: student
-          publish_dir: src/01/dist
+          publish_dir: src/02/dist
 
       - name: Push to student notebook repo (for distribution to class)
         uses: cpina/github-action-push-to-another-repository@main
         env:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
-          source-directory: 'src/01/dist/student'
+          source-directory: 'src/02/dist/student'
           destination-github-username: 'rsprouse'
           destination-repository-name: 'otter-template-student'
           user-email: ronald@berkeley.edu
